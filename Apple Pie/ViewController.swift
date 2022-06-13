@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var listOfWords = ["buccaneer", "swift", "glorious", "incandescent", "bug", "program"]
+    let incorrectMovesAllowed = 7
 
     
     @IBOutlet var letterButtons: [UIButton]!
