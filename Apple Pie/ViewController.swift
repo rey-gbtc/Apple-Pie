@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet var letterButtons: [UIButton]!
     @IBOutlet var treeImageView: UIImageView!
     @IBOutlet var correctWordLabel: UILabel!
@@ -18,7 +19,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func letterButtonPressed(_ sender: UIButton) {
+        sender.isEnabled = false
+    }
 
 }
 
