@@ -32,8 +32,19 @@ class ViewController: UIViewController {
     /*
      “What does it mean to start a new round? Each round begins with the selection of a new word, and resetting the number of moves the player can make to incorrectMovesAllowed.”
      */
+    
+    var currentGame: Game!
+    
+    
     func newRound(){
-        
+        let newWord = listOfWords.removeFirst()
+        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed)
+        updateUI()
+    }
+    
+    func updateUI() {
+        scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
+        treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
